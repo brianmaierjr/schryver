@@ -256,9 +256,12 @@ footer {
     .social {
       justify-content: flex-end; } }
   .social li {
-    max-width: 2rem; }
+    max-width: 2rem;
+    transition: .2s all ease-in-out; }
     .social li:not(:last-child) {
       margin-right: 0.75rem; }
+    .social li:hover {
+      opacity: .7; }
 
 @media (min-width: 1000px) {
   .about .wrap {

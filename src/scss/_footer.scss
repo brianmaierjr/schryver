@@ -25,17 +25,15 @@ footer {
     }
 }
 
-.footer {
-    &__logo {
-        width: rem(140); 
-        height: auto;
-        margin-left: 50%;
-        transform: translateX(-50%);
-        margin-bottom: 1rem;
+.footer__logo {
+    width: rem(140); 
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
 
-        @include min(md) {
-            width: rem(160);
-        }
+    @include min(md) {
+        width: rem(160);
     }
 }
 

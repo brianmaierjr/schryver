@@ -4,7 +4,7 @@
 ## Upgrades
 - Made the logos svgs 
 - Made the social icons svgs (they weren't provided)
-- Made the hero image a responsive background iamge with multiple sizes
+- Made the hero image a responsive background image with multiple sizes
 - Added hover effects to video, buttons, and social icons in footer
 
 ## Notes

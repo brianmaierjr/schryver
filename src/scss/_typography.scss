@@ -1,0 +1,40 @@
+// Typography
+
+p {
+    margin-bottom: 1.5rem;
+
+    &.p--lg {
+        @include min(md) {
+            font-size: rem(20);
+        }
+    }
+}
+
+h1, h2 { 
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $blue;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+
+    @include min(md) {
+        line-height: 1;
+        margin-bottom: 2rem;
+    }
+}
+
+h1 {
+    font-size: rem(36);
+
+    @include min(md) {
+        font-size: rem(70);
+    }
+}
+
+h2 {
+    font-size: rem(24);
+
+    @include min(md) {
+        font-size: rem(37);
+    }
+}

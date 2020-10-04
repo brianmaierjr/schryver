@@ -1,0 +1,59 @@
+// Footer
+
+footer {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+    @include mobilepadding();
+
+    .buttonGroup {
+        display: flex;
+        justify-content: center;
+
+        .button {
+            @include min(md) {
+                font-size: 1rem;
+            }
+        }
+    }
+    
+
+    .wrap {
+        @include min(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.footer {
+    &__logo {
+        width: rem(140); 
+        height: auto;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 1rem;
+
+        @include min(md) {
+            width: rem(160);
+        }
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include min(md) {
+        justify-content: flex-end;
+    }
+
+    li {
+        max-width: 2rem;
+        
+        &:not(:last-child) {
+            margin-right: rem(12);
+        }
+    }
+
+}

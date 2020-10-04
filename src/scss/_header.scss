@@ -1,0 +1,43 @@
+// Header
+
+header {
+    border-top: rem(10) solid $yellow;
+    background-size: cover;
+    background-position: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem; 
+    @include responsivebackground('header-image--sm.jpg', 'header-image.jpg');
+    @include mobilepadding();
+
+    @include min(md) {
+        border-top-width: rem(20);
+    }
+
+    h1 {
+        color: $yellow;
+
+        span {
+            color: white;
+            display: block;
+        }
+    }
+
+    p {
+        color: white; 
+        max-width: rem(545);
+    }
+}
+
+.header__logo {
+    max-width: rem(112);
+    padding-bottom: 3.5rem;
+    margin-left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+
+    @include min(md) {
+        margin-left: 0; 
+        transform: translateX(0) translateY(-20px);
+        max-width: rem(212);
+    }
+}

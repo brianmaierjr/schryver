@@ -1,0 +1,14 @@
+// Utility Classes
+.bg {
+    &--blue {
+        background-color: $blue;
+        color: white;
+
+        a:not(.button) {
+            color: currentColor;
+        }
+    }
+    &--gray {
+        background-color: $gray;
+    }
+}

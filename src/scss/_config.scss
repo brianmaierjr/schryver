@@ -1,0 +1,79 @@
+// Variablesv
+$yellow: #ffd500;
+$gray: #f1f1f1;
+$blue: #25343b;
+$black: #212121;
+
+// Breakpoints
+$breakpoints: (
+	sm: 480px,
+	md: 768px,
+	lg: 1000px,
+	wrap: 1090px 
+);
+
+// Browser Context (this is needed for the px to em's mixin)
+$browser-context: 16; // Default
+
+// Responsive Mixin Mobile First
+// @include min(md);
+@mixin min($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+
+		@media (min-width: $value) {
+			@content;
+		}
+	}
+
+	// @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+
+// Responsive Mixin Desktop First
+// @include max(md);
+@mixin max($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+
+		@media (max-width: $value) {
+			@content;
+		}
+	}
+
+	// @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+
+// Pixels to Rems Function
+// padding: rem(20);
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}
+
+// Standard section spacing
+@mixin sectionspace($pixels-sm: 45, $pixels-lg: 75) {
+	padding-top: rem($pixels-sm);
+	padding-bottom: rem($pixels-sm);
+
+	@include min(md) {
+		padding-top: rem($pixels-lg);
+		padding-bottom: rem($pixels-lg);
+	}
+}
+
+// Mobile Padding
+@mixin mobilepadding($padding-mobile: 24) {
+	@include max(wrap) {
+		padding-left: rem($padding-mobile);
+		padding-right: rem($padding-mobile);
+	}
+}
+
+// Responsive background images
+@mixin responsivebackground($sm: $hero-sm, $lg: $hero-lg) {
+	@media screen and (max-width: 767px) {
+		background-image: url("../img/"+$sm);
+	}
+	@media screen and (min-width: 768px) {
+		background-image: url("../img/"+$lg);
+	}
+}

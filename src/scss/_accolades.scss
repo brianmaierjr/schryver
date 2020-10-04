@@ -1,0 +1,49 @@
+// Accolades
+
+.accolades {
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        flex: 0 1 calc( 100% / 3 ); 
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: rem(10);
+
+        @include min(md) {
+            flex-basis: calc(100% /5);
+        }
+
+        img {
+            max-height: rem(80);
+
+            @include min(md) {
+                max-height: rem(150);
+            }
+        }
+
+        &:first-child {
+            padding-left: 0
+            ;
+        }
+
+        &:nth-child(3) {
+            padding-right: 0;
+
+            @include min(md) {
+                padding-right: rem(10);
+            }
+        }
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+}
